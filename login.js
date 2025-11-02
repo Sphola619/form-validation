@@ -7,15 +7,15 @@ form.addEventListener("submit", async (e) => {
   const password = document.getElementById("password").value.trim();
 
   try {
-    const response = await fetch("https://form-validation-backend.onrender.com/login", {
+    const response = await fetch("https://form-validation-backend-vkmy.onrender.com/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ email, password }),
     });
 
     const data = await response.json();
     alert(data.message);
   } catch (error) {
-    console.error(error);
+    console.error("Error:", error);
   }
 });
